@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Registration Form</title>
+
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    form {
+      background-color: #ffffff;
+      width: 300px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    input, select {
+      width: 90%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+  </style>
+
+  <script>
+    function validateForm() {
+      var email = document.getElementById("email").value;
+      var errorMsg = document.getElementById("error");
+
+      if (!email.endsWith("@gmail.com")) {
+        errorMsg.innerText = "Enter correct email id";
+        errorMsg.style.color = "red";
+        return false;
+      }
+
+      window.location.href = "thankyou.html";
+      return false;
+    }
+  </script>
+</head>
+
+<body>
+
+  <h1>Event Registration</h1>
+
+  <form onsubmit="return validateForm()">
+
+    Name:<br>
+    <input type="text" required><br><br>
+
+    Email:<br>
+    <input type="email" id="email" required>
+    <br><span id="error"></span><br><br>
+
+    Contact Number:<br>
+    <input type="tel" required><br><br>
+
+    Select Event:<br>
+    <select required>
+      <option value="">-- Select Event --</option>
+      <option>Dance</option>
+      <option>Singing</option>
+      <option>Painting</option>
+      <option>Drama</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Submit Registration</button>
+
+  </form>
+
+  <br>
+  <a href="index.html">← Back to Event Page</a>
+
+</body>
+</html>
